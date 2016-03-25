@@ -92,7 +92,7 @@ A separate thread is spawn to retrieve the account IDs in the background.
 While the IDs are being retrieved, a Parallel.foreach loop is used to process the retrieved ID in each ID list. 
 Using Parallel.foreach, each ID is assigned to one thread, which uses the ID to retrieve the account in parallel. 
 
-In this version of ParallelPhoneAccService, once the account has been retrieved, the thread will determine whether to 
+In this first version of ParallelPhoneAccService, once the account has been retrieved, the thread will determine whether to 
 add the account to the list of results. If the account is added, the thread will sort the list using LINQ so that the account
 with the oldest age can be identified.
 The sorting of the list increases the waiting time by other threads and potentially slows down the program.
